@@ -1,5 +1,5 @@
 {
-  "name": "expensify",
+  "name": "indecision-app",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Andrew Mead",
@@ -18,8 +18,8 @@
     "babel-preset-react": "6.24.1",
     "css-loader": "0.28.4",
     "live-server": "^1.2.0",
-    "node-sass": "4.5.3",
-    "normalize.css": "7.0.0",
+    "node-sass": "4.14.1",
+    "normalize.css": "8.0.1",
     "react": "15.6.1",
     "react-dom": "15.6.1",
     "react-modal": "2.2.2",
