@@ -1,8 +1,8 @@
 import React from 'react';
 
-const EditComponent = () => (
+const EditComponent = (props) => (
     <div>
-        This is from my EditComponent!
+        Editing the expenses with id of {props.match.params.id} 
     </div>
 );
 
