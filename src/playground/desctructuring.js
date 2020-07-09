@@ -27,3 +27,8 @@ const {title, author} = book;
 console.log(`Title of the book is "${title}". It is written by ${author}.`)
 const {marakiSe9elw: name = 'unknown'} = book.publisher;
 console.log(`The publisher of this book is called ${name}.`)
+
+const address = ['Dodekanisou', 33, 'Alimos', 'Athens, Greece', 17456];
+const [, , , , tk] = address;
+
+console.log(`My zip code is ${tk}`)
