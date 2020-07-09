@@ -95,7 +95,13 @@ const getVisibleExpenses =  (expenses, {text, sortBy, startDate, endDate}) => {
         const textMatch = expense.description.toLowerCase().includes(text.toLowerCase())
 
         return startDateMatch && endDateMatch && textMatch;
-    });
+    }).sort((a, b) =>{
+        if(sortBy === 'date'){
+            return a.createdAt < b.createdAt ? 1 : -1;
+        }else if(sortBy === 'amount'){
+            return a.amount < b.amount ? 1 : -1;
+        }
+    })
 }
 
 //CombineReducers() function takes an object as parameter with key-pair values.
@@ -114,15 +120,15 @@ store.subscribe(()=>{
     console.log(visibleExpenses)
 })
 
-const expenseOne   =store.dispatch(addExpense({description:'Rent', amount:350}))
-const expenseTwo   =store.dispatch(addExpense({description:'Movies', amount:20, note:"Don't go to Twilight!"}))
+const expenseOne   =store.dispatch(addExpense({description:'Rent', amount:3000}))
+const expenseTwo   =store.dispatch(addExpense({description:'Movies', amount:2000, note:"Don't go to Twilight!"}))
 // const expenseThree =store.dispatch(addExpense({description:'Super market', amount:45}))
 // const expenseFour  =store.dispatch(addExpense({description:'Wow Subscription', amount:12.99}))
 
 // store.dispatch(removeExpense({id: expenseOne.expense.id}));
 // store.dispatch(editExpense(expenseTwo.expense.id, {amount:500} ))
 
-store.dispatch(setTextFilter('rent'));
+// store.dispatch(setTextFilter('rent'));
 // store.dispatch(setTextFilter());
 
 // store.dispatch(sortByAmount());
