@@ -23,6 +23,12 @@ firebase.database().ref().set({
         city: 'Athens',
         country: 'Greece'
     }
-});
+}).then(()=>{
+    console.log('data is saved')
+}).catch((e)=>{
+    console.log('This failed', e)
+})
 
 database.ref('attributes').set({'height':1.75, 'weight': 75 })
+        .then(()=>{console.log('data saved')})
+        .catch((e)=>{console.log('Failed to write data', e)})
