@@ -1,6 +1,6 @@
 import * as firebase from 'firebase';
 
-const firebaseConfig = {
+const config = {
     apiKey: "AIzaSyD_4LUIG0k9NaVn32xYXpku9Zr7USi9E1w",
     authDomain: "react-project-no1.firebaseapp.com",
     databaseURL: "https://react-project-no1.firebaseio.com",
@@ -11,9 +11,12 @@ const firebaseConfig = {
     measurementId: "G-JS4EVS1PVV"
 };
 
-firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(config);
 
 const database = firebase.database();
+
+export { firebase, database as default };
+
 
 // Child change
 // database.ref('expenses').on('child_changed', (snapshot)=>{
