@@ -15,10 +15,37 @@ firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
 
-database.ref().on('value', (snapshop)=>{
-    const val = snapshop.val();
-    console.log(`${val.name} is a ${val.job.title} at ${val.job.company}`)
-})
+database.ref('expenses').push({
+    description: 'Rent',
+    note: '',
+    amount: 109500,
+    createdAt: 976123498763
+  });
+  
+  database.ref('expenses').push({
+    description: 'Phone bill',
+    note: '',
+    amount: 5900,
+    createdAt: 976123498763
+  });
+  
+  database.ref('expenses').push({
+    description: 'Food',
+    note: '',
+    amount: 1200,
+    createdAt: 976123498763
+  });
+  
+
+// database.ref('notes').push({
+//     title: 'Course Topics',
+//     body: 'React Native, Angular, Python'
+// })
+
+// database.ref().on('value', (snapshop)=>{
+//     const val = snapshop.val();
+//     console.log(`${val.name} is a ${val.job.title} at ${val.job.company}`)
+// })
 
 // database.ref().on('value', (snapshop)=>{
 //     console.log(snapshop.val());
