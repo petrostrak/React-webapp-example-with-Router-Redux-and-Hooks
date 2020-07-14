@@ -29,6 +29,7 @@ firebase.database().ref().set({
     console.log('This failed', e)
 })
 
-database.ref('attributes').set({'height':1.75, 'weight': 75 })
-        .then(()=>{console.log('data saved')})
-        .catch((e)=>{console.log('Failed to write data', e)})
+// database.ref('isSingle').remove()
+//         .then(()=>{console.log('Field successuffuly removed')})
+//         .catch((e)=>{console.log('Something went wrong',e)})
+// database.ref('isSingle').set(null);
