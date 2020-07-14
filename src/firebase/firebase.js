@@ -17,8 +17,13 @@ const database = firebase.database();
 
 firebase.database().ref().set({
     name: 'petros trak',
+    stressLevel: 6,
     age: 34,
     isSingle: true,
+    job:{
+        title: 'Software engineer',
+        company: 'Google'
+    },
     location:{
         city: 'Athens',
         country: 'Greece'
@@ -33,3 +38,9 @@ firebase.database().ref().set({
 //         .then(()=>{console.log('Field successuffuly removed')})
 //         .catch((e)=>{console.log('Something went wrong',e)})
 // database.ref('isSingle').set(null);
+
+database.ref().update({
+    stressLevel: 9,
+    'job/company' : 'Amazon',
+    'location/city': 'Seattle'
+})
