@@ -13,6 +13,16 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+const database = firebase.database();
+
 firebase.database().ref().set({
-    name: 'petros trak'
-})
+    name: 'petros trak',
+    age: 34,
+    isSingle: true,
+    location:{
+        city: 'Athens',
+        country: 'Greece'
+    }
+});
+
+database.ref('attributes').set({'height':1.75, 'weight': 75 })
